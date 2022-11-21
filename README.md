@@ -14,5 +14,8 @@ API serves users to enter into bets
 3. Check swagger documentation for API usage: http://localhost:8887/swagger-ui/#/
 
 
+![API Swagger](API-Swagger.png)
+
+
 ### Remaining work
 This project requires Unit and integration tests in order to prevent any regression for future versions
