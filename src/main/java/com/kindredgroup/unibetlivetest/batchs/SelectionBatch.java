@@ -48,6 +48,10 @@ public class SelectionBatch {
         log.info("{} selections(s) closed randomly.", selectionService.closeOddsRandomly());
     }
 
+    /**
+     * Process closed selections in order to pay winner
+     * This batch is resilient regarding each bet, no bet process error should impact other lines from being treated
+     */
     @Scheduled(fixedRate = 1000 * 90)
     public void payBets() {
         final LocalDateTime startDate = LocalDateTime.now(UNIBET_TIMEZONE);
