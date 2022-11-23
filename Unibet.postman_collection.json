@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f202e676-ce00-4e25-842e-7e395212abc5",
+		"name": "Unibet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6860196"
+	},
+	"item": [
+		{
+			"name": "Get all events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8887/api/v1/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8887",
+					"path": [
+						"api",
+						"v1",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get event by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8887/api/v1/events/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8887",
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event Selections (By State optionally)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8887/api/v1/events/2/selections?state=OPENED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8887",
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"2",
+						"selections"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "OPENED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Bet (Pari)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Customer-Pseudo",
+						"value": "unibest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"selectionId\": 8,\r\n    \"cote\": 4.40,\r\n    \"mise\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8887/api/v1/bets/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8887",
+					"path": [
+						"api",
+						"v1",
+						"bets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Customer-Pseudo",
+						"value": "unibest",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8887/api/v1/customers/current",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8887",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"current"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
